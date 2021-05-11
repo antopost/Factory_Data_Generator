@@ -7,8 +7,6 @@ import re
 import json
 from config import dataset_main_dir
 
-depth_template = cv2.imread(os.path.join(dataset_main_dir, 'depth_template_175.png'), 0)
-
 
 def find_obstacles(depth, segmentation):
     """
@@ -39,10 +37,10 @@ def find_obstacles(depth, segmentation):
 
 
 if __name__ == "__main__":
-
+    depth_template = cv2.imread(os.path.join('Templates', 'depth_template_175_P30_depth.png'), 0)
     OBSTACLE = (255, 122, 1)
     FLOOR = (255, 255, 79)
-    sets = ['Set_16']
+    sets = ['Set_0']
     all_sets = re.findall(r'Set_\d+', str(glob(os.path.join(dataset_main_dir, '*'))))
     print(all_sets)
     seg_extension = 'png'

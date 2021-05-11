@@ -1,6 +1,9 @@
 # Factory Data Generator
-This repository contains the source code needed to generate ground truth data within a 3D simulated factory environment for the purpose of training and testing convolutional neural network-based obstacle detectors.
-It accompanies the Master Thesis of Anton Backhaus with the title "Model fusion for robust monocular obstacle detection" presented at the Laboratory for Machine Tools and Production Engineering (WZL) at RWTH Aachen University.
+This repository contains the source code needed to generate ground truth data within a 3D simulated factory environment 
+for the purpose of training and testing convolutional neural network-based obstacle detectors.
+It accompanies the Master Thesis of Anton Backhaus with the title "Model fusion for robust monocular obstacle detection" 
+presented at the Laboratory for Machine Tools and Production Engineering (WZL) at RWTH Aachen University.
+
 The factory environment is not included in this repo and must be obtained seperately due to storage limitations of github.
 
 With [UnrealCV](https://unrealcv.org/) and a factory environment created in [Unreal Engine 4](https://www.unrealengine.com/en-US/) RGB, binary segmentation and depth ground truth data can be generated.
@@ -26,6 +29,9 @@ a few marked lines of code at the bottom.
 * demo.py can be used after creating a trajectory. This just shows the data but does not save it.
 * data_generator.py will save all the images of the trajectory to a directory specified in config.py
 Before executing demo.py or data_generator.py make sure that UE4 is actually running. If not it can cause UE4 to crash.
+* metadata_generator.py generates a .json file containing a list of all frames at which the vehicle should stop depending
+on the ∩-volume stopping criterion described in the thesis.
+* visualize.py shows the generated RGB images and marks all pixels belonging to obstacles within the ∩-volume
 
 ## Issues
 * If you have animations running in your simulation, i.e. dynamic objects, be sure to make them run slow.

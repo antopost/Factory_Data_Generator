@@ -5,7 +5,7 @@ from natsort import natsorted
 import os
 from config import dataset_main_dir
 
-sets = ['Set_20']
+sets = ['Set_0']    # Choose which sets to visualize
 seg_template = cv2.imread(os.path.join(dataset_main_dir, 'template_175_P30_mask.png'), 0)
 seg_template[seg_template != 0] = 1
 circle = cv2.imread(os.path.join(dataset_main_dir, 'circle.png'), 0)
@@ -15,11 +15,12 @@ add_circle = True
 show_frame = False
 show_reference = False
 start = 0
-
+if sets == []:
+    print("Choose one or multiple sets to visualize.")
 for set in sets:
     set_path = os.path.join(dataset_main_dir, set)
     rgb_paths = natsorted(glob(os.path.join(set_path, 'image', '*.jpg')))
-    depth_template = cv2.imread(os.path.join(dataset_main_dir, 'template_175_P30_depth.png'), 0)
+    depth_template = cv2.imread(os.path.join("Templates", 'template_175_P30_depth.png'), 0)
     depth_paths = natsorted(glob(os.path.join(set_path, 'depth', '*.png')))
 
     rgb_paths = rgb_paths[start:]
