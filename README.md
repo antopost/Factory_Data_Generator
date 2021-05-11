@@ -19,7 +19,7 @@ With [UnrealCV](https://unrealcv.org/) and a factory environment created in [Unr
 ## Install (Windows)
 After downloading and extracting the package cd into your root directory and run the following line from command prompt:
 ```bash
-setup.py install
+python setup.py install
 ```
 
 ## Scripts

@@ -1,15 +1,10 @@
 import math
 import json
 import traj_random
+from config import L, W, S
 
-# track length (cm)
-L = 2851.5
-# track width (cm)
-W = 1568.5
 # camera height (cm)
 H = 155
-# step length (cm)
-S = 4
 # turning radius (cm)
 R = 330
 # camera pitch in deg
@@ -146,7 +141,11 @@ def make_readable(x, y, d):
 if __name__ == "__main__":
     import os
     from config import dataset_main_dir
-    path = os.path.join(dataset_main_dir, "Trajectory", "metadata.json")
+    traj_dir = os.path.join(dataset_main_dir, "Trajectory")
+    if not os.path.isdir(traj_dir):
+        print(f"{traj_dir} does not exist. Creating {traj_dir}")
+        os.mkdir(traj_dir)
+    path = os.path.join(traj_dir, "metadata.json")
     pitch = str(-P)
     step_distance = str(S)
     info = {

@@ -11,7 +11,10 @@ L = 2851.5
 W = 1568.5
 # half minor track WIDTH (cm)
 V = 100
-# step length (cm)
+# step length (cm) i.e. take a picture every x centimeters
 S = 4
 # track width (major) (cm)
 WIDTH = 260
+
+# Negative camera pitch in degrees (field of view must be altered in UE)
+P = 30
