@@ -34,8 +34,8 @@ on the ∩-volume stopping criterion described in the thesis.
 * visualize.py shows the generated RGB images and marks all pixels belonging to obstacles within the ∩-volume
 
 ## Issues
-* If you have animations running in your simulation, i.e. dynamic objects, be sure to make them run slow.
-UnrealCV and UE4 asynchronously causing RGB, segmentation and depth to be mismatched where there is movement in the scene
+* If you have animations running in your simulation, i.e. dynamic objects, be sure to make them run slowly.
+UnrealCV and UE4 run asynchronously causing RGB, segmentation and depth to be mismatched where there is movement in the scene
 (see legs of person in the above image).
 * I had an issue with UnrealCV preventing me from gathering data from the main camera which is why I had to use the fusion camera
 actor that comes with UnealCV. This increases render times. Also, I coded the main camera actor to follow the fusion camera actor
