@@ -37,7 +37,7 @@ def find_obstacles(depth, segmentation):
 
 
 if __name__ == "__main__":
-    depth_template = cv2.imread(os.path.join('Templates', 'depth_template_175_P30_depth.png'), 0)
+    depth_template = cv2.imread(os.path.join('templates', 'depth_template_175_P30_depth.png'), 0)
     OBSTACLE = (255, 122, 1)
     FLOOR = (255, 255, 79)
     sets = ['Set_0']

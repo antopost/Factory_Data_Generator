@@ -20,7 +20,7 @@ if sets == []:
 for set in sets:
     set_path = os.path.join(dataset_main_dir, set)
     rgb_paths = natsorted(glob(os.path.join(set_path, 'image', '*.jpg')))
-    depth_template = cv2.imread(os.path.join("Templates", 'template_175_P30_depth.png'), 0)
+    depth_template = cv2.imread(os.path.join("templates", 'template_175_P30_depth.png'), 0)
     depth_paths = natsorted(glob(os.path.join(set_path, 'depth', '*.png')))
 
     rgb_paths = rgb_paths[start:]
